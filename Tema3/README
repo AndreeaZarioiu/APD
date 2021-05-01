@@ -1,55 +1,19 @@
-############ Zarioiu Andreea 333CA ############
+masterFunction() 
 
-In rezolvarea temei ma folosesc de functiile
-masterFunction() si workerFunction().
-
--> masterFunction() contine logica procesului Master ce
+Contine logica procesului Master ce
 deschide fisierul de input din 4 threaduri ce primesc functia
 f(). Acestea citesc fisierul in paralel si il trimit paragraf cu paragraf.
 Succesiv paragrafele procesate sunt primite si bagate intr-un vector ce pastreaza
 ordinea lor si apoi cu un thread vectorul este parcurs
 si transferat in fisierul de out.
 
--> workerFunction() porneste initial un thread pentru primirea datelor prin
-		-> receiver() asteapta paragrafe pana la primirea stringului
-		"opreste citire". Pentru fiecare paragraf porneste numarul necesar
-		de threaduri dupa cum se precizeaza in enunt si la final uneste
-		liniile si trimite paragraful obtinut la Master.
-		-> g() proceseaza liniile in functie de genul paragrafului.
+workerFunction() 
 
+Porneste initial un thread pentru primirea datelor prin
+	-> receiver() asteapta paragrafe pana la primirea stringului
+	"opreste citire". Pentru fiecare paragraf porneste numarul necesar
+	de threaduri dupa cum se precizeaza in enunt si la final uneste
+	liniile si trimite paragraful obtinut la Master.
+	-> g() proceseaza liniile in functie de genul paragrafului.
 
-####### Scalabilitatea #########
-Rulat pe masina virtuala, checkerul afiseaza urmatorul rezultat:
-
-~~~~~~~~~~~~~~~ ESTABLISHING BASE TIME ~~~~~~~~~~~~~~
-Test input1.txt took 0.007904291152954102 seconds
-Test input2.txt took 0.40907907485961914 seconds
-Test input3.txt took 1.130739688873291 seconds
-Test input4.txt took 21.47542452812195 seconds
-Test input5.txt took 30.23021650314331 seconds
-
-~~~~~~~~~~~~~~~~~~~ RUNNING TESTS ~~~~~~~~~~~~~~~~~~~
-Test input1.txt took 0.2740478515625 seconds
-Test input2.txt took 1.98067307472229 seconds
-Test input3.txt took 4.303902864456177 seconds
-Test input4.txt took 63.123148918151855 seconds
-Test input5.txt took 98.93579745292664 seconds
-
-~~~~~~~~~~~~~~~~~~~~~ COMPARING ~~~~~~~~~~~~~~~~~~~~~
-Test input1 is correct	SCORE = 2
-Test input2 is correct	SCORE = 4
-Test input3 is correct	SCORE = 6
-Test input4 is correct	SCORE = 8
-Test input5 is correct	SCORE = 10
-
-~~~~~~~~~~~~~ DOES IT READ IN PARALLEL? ~~~~~~~~~~~~~
-IT DOES
-SCORE = 10
-
-~~~~~~~~~~~~~~~~~~~ DOES IT SCALE? ~~~~~~~~~~~~~~~~~~
-Serial : 21.47542452812195 vs Distributed : 63.123148918151855
-IT DOES NOT :(
-SCORE = 8
-
-Final grade =  8
 
