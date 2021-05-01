@@ -1,4 +1,4 @@
-masterFunction() 
+## masterFunction() 
 
 Contine logica procesului Master ce
 deschide fisierul de input din 4 threaduri ce primesc functia
@@ -7,7 +7,7 @@ Succesiv paragrafele procesate sunt primite si bagate intr-un vector ce pastreaz
 ordinea lor si apoi cu un thread vectorul este parcurs
 si transferat in fisierul de out.
 
-workerFunction() 
+## workerFunction() 
 
 Porneste initial un thread pentru primirea datelor prin
 	-> receiver() asteapta paragrafe pana la primirea stringului
